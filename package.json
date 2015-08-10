@@ -4,7 +4,8 @@
   "description": "A test for timed based data",
   "main": "src/index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/mocha --reporter=spec"
+    "test": "node_modules/mocha/bin/mocha --reporter=spec",
+    "start": "node src/index.js"
   },
   "devDependencies": {
     "chai": "^3.2.0",

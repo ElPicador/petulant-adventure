@@ -16,11 +16,11 @@ A test for timed based data
 
 ### Running
 
-  * npm run
+  * npm start
 
 ### Comments
 
-  * Instead of validator.js => moment.js (http://momentjs.com)
+  * Instead of validator.js, parse.js => moment.js (http://momentjs.com)
 
 ### TODO
 
