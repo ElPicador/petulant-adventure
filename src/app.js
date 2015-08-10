@@ -13,7 +13,7 @@ var create_app = function(port) {
 
   app.get('/1/queries/count/:date', function(req, res) {
     if(!validator.date(req.params.date)) {
-      return res.status(400).json({message: 'Date is not valid. Accepting YYYY, YYYY-MM or YYYY-MM-dd'});
+      return res.status(400).json({message: 'Date is not valid. Accepting YYYY, YYYY-MM, YYYY-MM-dd, YYYY-MM-dd HH, YYYY-MM-dd HH:mm or YYYY-MM-dd HH:mm:ss'});
     }
 
     if(req.query.size && !validator.size(req.query.size)) {
