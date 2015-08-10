@@ -22,6 +22,13 @@ A test for timed based data
 
   * Instead of validator.js, parse.js => moment.js (http://momentjs.com)
 
+### Libs
+
+  * express for http/json
+  * mocha for testing
+  * chai for BDD assertions
+  * supertest for http/json assertions
+
 ### TODO
 
   * Better validation, validate month and day format. Eg : 2015-90 passes the tests

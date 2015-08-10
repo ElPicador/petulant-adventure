@@ -22,28 +22,60 @@ describe('validator', function() {
 
 		describe('year & month', function() {
 
-			it('valid year & month', function() {
+			it('valid', function() {
 				expect(validator.date('2015-08')).to.be.true;
 			});
 
-			it('invalid year & valid month', function() {
-				expect(validator.date('date-08')).to.be.false;
-			});
-
-			it('invalid year & invalid month', function() {
-				expect(validator.date('year-month')).to.be.false;
+			it('invalid', function() {
+				expect(validator.date('2015-month')).to.be.false;
 			});
 
 		});
 
 		describe('year & month & day', function() {
 
-			it('valid year & month & day', function() {
-
+			it('valid', function() {
+				expect(validator.date('2015-08-19')).to.be.true;
 			});
 
-			it('invalid year & invalid month', function() {
-				expect(validator.date('year-month')).to.be.false;
+			it('invalid', function() {
+				expect(validator.date('2015-08-month')).to.be.false;
+			});
+
+		});
+
+		describe('year & month & day & hour', function() {
+
+			it('valid', function() {
+				expect(validator.date('2015-08-19 10')).to.be.true;
+			});
+
+			it('invalid', function() {
+				expect(validator.date('2015-08-19 hour')).to.be.false;
+			});
+
+		});
+
+		describe('year & month & day & hour & minute', function() {
+
+			it('valid', function() {
+				expect(validator.date('2015-08-19 10:01')).to.be.true;
+			});
+
+			it('invalid', function() {
+				expect(validator.date('2015-08-19 10:minute')).to.be.false;
+			});
+
+		});
+
+		describe('year & month & day & hour & minute & second', function() {
+
+			it('valid', function() {
+				expect(validator.date('2015-08-19 10:01:56')).to.be.true;
+			});
+
+			it('invalid', function() {
+				expect(validator.date('2015-08-19 10:01:second')).to.be.false;
 			});
 
 		});
