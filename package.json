@@ -1,0 +1,17 @@
+{
+  "name": "petulant-adventure",
+  "version": "1.0.0",
+  "description": "A test for timed based data",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha --reporter=spec"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "2.2.5",
+    "supertest": "^1.0.1"
+  },
+  "dependencies": {
+    "express": "4.13.3"
+  }
+}
