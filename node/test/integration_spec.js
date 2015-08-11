@@ -1,14 +1,14 @@
 'use strict';
 
 var server = require('../src/app.js'),
-    request = require('supertest')
+    request = require('supertest');
 
 describe('integration tests', function() {
 
   var app;
 
-  before(function() {
-    app = server('./test/data.tsv');
+  before(function(done) {
+    app = server('./test/data/one_day.tsv', done);
   });
 
   describe('/', function() {
@@ -38,18 +38,18 @@ describe('integration tests', function() {
   });
 
 
-  describe('/1/queries/count/DATE?size=SIZE', function() {
+  describe('/1/queries/popular/DATE?size=SIZE', function() {
 
     it('answers JSON', function(done) {
       request(app)
-        .get('/1/queries/count/2015?size=1')
+        .get('/1/queries/popular/2015?size=1')
         .expect('Content-Type', /json/)
         .expect(200, done);
     });
 
     it('400 if invalid size', function(done) {
       request(app)
-        .get('/1/queries/count/2015?size=SIZE')
+        .get('/1/queries/popular/2015?size=SIZE')
         .expect(400, done);
     });
 

@@ -1,3 +1,4 @@
-*/data/hn_logs.tsv
+hn_logs.tsv
 .DS_Store
 node_modules
+npm-debug.log

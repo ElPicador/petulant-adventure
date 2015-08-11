@@ -9,7 +9,7 @@ var parse_size = function(size) {
 
 var _pad2_and_parse = function(val) {
 	return ('00' + parseInt(val, 10)).slice(-2);
-}
+};
 
 //date is already valid
 var parse_date = function(date) {
@@ -17,7 +17,7 @@ var parse_date = function(date) {
 
 	var result = {
 		year: '' + parseInt(regexp_exec[1], 10) //date is valid, so at least a year
-	}
+	};
 
 	if(regexp_exec[2]) {
 		result.month = result.year + '-' + _pad2_and_parse(regexp_exec[2]);

@@ -2,7 +2,7 @@
 
 var REGEXP = {
 	FULL_TIMESTAMP: /^(\d+)-?(\d\d?)?-?(\d\d?)? ?(\d\d?)?:?(\d\d)?:?(\d\d)?$/
-}
+};
 
 var validate_date = function(date) {
 	return REGEXP.FULL_TIMESTAMP.test(date);

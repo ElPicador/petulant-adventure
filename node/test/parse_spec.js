@@ -1,8 +1,7 @@
 'use strict';
 
-var expect = require('chai').expect
-
-var parse = require('../src/parse');
+var expect = require('chai').expect,
+    parse = require('../src/parse');
 
 describe('parse', function() {
 
