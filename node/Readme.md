@@ -18,13 +18,16 @@ A test for timed based data
 
   * npm start
     * Starts a web server on port 3000
-    * Launch indexing of contents asynchronously
+    * Launches indexing of contents asynchronously
   * curl -v http://localhost:3000/
+  * curl -v http://localhost:3000/1/queries/count/2015
+  * curl -v http://localhost:3000/1/queries/popular/2015?size=3
 
 ### Comments
 
   * Instead of validator.js, parse.js => moment.js (http://momentjs.com)
-  * Indexing of simple_searcher.js is naive, but can work with a small set of data.
+  * Indexing in simple_searcher.js is naive, but can work with a small set of data. It uses too much memory, as each data is duplicated 6 times (one in each timeslot).
+  * Caching of results could be done, but only if indexing is completed
 
 ### Libraries
 
