@@ -2,9 +2,12 @@
 
 var express = require('express'),
   validator = require('./validator'),
-  parse = require('./parse');
+  parse = require('./parse'),
+  simple = require('./simple')
 
-var create_app = function(port) {
+var create_app = function(file) {
+  simple.index(file);
+
   var app = express();
 
   app.get('/', function (req, res) {
@@ -23,12 +26,24 @@ var create_app = function(port) {
     var date = parse.date(req.params.date);
     var size = parse.size(req.query.size);
 
-    res.json({date: date, size: size});
+    if(!req.query.size) {
+      var count = simple.count(date);
+      if(count && count !== 0) {
+        res.json({count: simple.count(date)});
+      } else {
+        res.status(404).json({});
+      }
+    } else {
+      var top = simple.top(date, size);
+      if(top && top.length) {
+        res.json({queries: top});
+      } else {
+        res.status(404).json({});
+      }
+    }
   });
 
   return app;
 }
-
-
 
 module.exports = create_app

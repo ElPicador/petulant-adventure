@@ -8,7 +8,7 @@ describe('integration tests', function() {
   var app;
 
   before(function() {
-    app = server();
+    app = server('./test/data.tsv');
   });
 
   describe('/', function() {

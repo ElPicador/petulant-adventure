@@ -21,6 +21,7 @@ A test for timed based data
 ### Comments
 
   * Instead of validator.js, parse.js => moment.js (http://momentjs.com)
+  * Indexing of simple.js is naive, but can work with a small set of data. Indexing could be speed up with async loading of file & by straming the content, instead of reading it all
 
 ### Libs
 
@@ -31,5 +32,5 @@ A test for timed based data
 
 ### TODO
 
-  * Better validation, validate month and day format. Eg : 2015-90 passes the tests
+  * Better validation, validate month and day format. Eg : 2015-90 pass the tests
   * Multiple values of size. Eg : GET /1/queries/count/2015?size=1&size=2
