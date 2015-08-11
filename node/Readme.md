@@ -5,32 +5,35 @@ A test for timed based data
 
   * nvm (https://github.com/creationix/nvm)
 
-### Init
+### Install
 
   * nvm install
   * npm install
 
-### Testing
+### Test
 
   * npm test
 
-### Running
+### Run
 
   * npm start
+    * Starts a web server on port 3000
+    * Launch indexing of contents asynchronously
+  * curl -v http://localhost:3000/
 
 ### Comments
 
   * Instead of validator.js, parse.js => moment.js (http://momentjs.com)
-  * Indexing of simple.js is naive, but can work with a small set of data. Indexing could be speed up with async loading of file & by straming the content, instead of reading it all
+  * Indexing of simple_searcher.js is naive, but can work with a small set of data.
 
-### Libs
+### Libraries
 
   * express for http/json
   * mocha for testing
   * chai for BDD assertions
   * supertest for http/json assertions
 
-### TODO
+### Improvements
 
   * Better validation, validate month and day format. Eg : 2015-90 pass the tests
-  * Multiple values of size. Eg : GET /1/queries/count/2015?size=1&size=2
+  * Invalid multiple values of size. Eg : GET /1/queries/popular/2015?size=1&size=2
